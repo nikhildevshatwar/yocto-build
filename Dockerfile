@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # Install basic packages required for running scripts
 ARG DEBIAN_FRONTEND=noninteractive
-Run apt-get update && apt-get install -y git wget vim sudo
+Run apt-get update && apt-get install -y git wget vim locales locales-all sudo
 
 ADD . /home/root/
 COPY .git /home/root/.git
