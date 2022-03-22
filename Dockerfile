@@ -9,6 +9,7 @@ COPY .git /home/root/.git
 
 ENV CUSTOM_BUILD_PATH=/home/root/sdk/build
 ENV CUSTOM_TOOLS_PATH=/home/root/sdk/tools
+ENV TZ="America/New_York"
 
 # Install all the packages required for build in separate step of it's own
 RUN cd /home/root; . scripts/setup-tasks.sh; install_host_packages
