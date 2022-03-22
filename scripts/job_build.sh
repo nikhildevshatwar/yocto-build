@@ -33,7 +33,7 @@ install_host_packages
 create_dir_with_sudo $BUILD_PATH
 create_dir_with_sudo $TOOLS_PATH
 
-setup_proxy_settings
+#setup_proxy_settings
 setup_gitconfig
 
 #install_installbuilder $TOOLS_PATH
@@ -66,35 +66,3 @@ yocto_build $machine tisdk-default-image
 yocto_build $machine tisdk-docker-rootfs-image
 yocto_build $machine tisdk-core-bundle
 
-
-################################################################################
-# Create a version for this build
-version=`create_release_version $machine $baseversion`
-versiondot=${version//_/.}
-
-################################################################################
-# Create the installer
-installer_generate_docs $machine $version $versiondot $rtsuffix
-installer_add_tools $machine $rtsuffix
-
-installer_create_binary $machine $version $versiondot $rtsuffix
-
-
-################################################################################
-# Create webgen release
-create_sdk_packages $machine $version $versiondot $rtsuffix
-
-webgen_create_release $machine $version $versiondot $rtsuffix
-
-create_ti_com_json $machine $version $versiondot $rtsuffix
-
-################################################################################
-# Create artifacts and results
-save_repo_revisions
-
-commit_release_oeconfig $machine $version $versiondot
-sync_mirror_packages
-
-echo -e "\n\n\n\n**** FINISHED JENKINS JOB ****\n\n\n\n"
-# done
-################################################################################
