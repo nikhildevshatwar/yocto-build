@@ -15,4 +15,4 @@ ENV TZ="America/New_York"
 RUN cd /home/root; . scripts/setup-tasks.sh; install_host_packages
 
 
-#RUN cd /home/root; ./scripts/job_build.sh am64xx-evm processor-sdk-08.02.00-nightly-config.txt nightly 08.02.00 false 
+RUN cd /home/root; ./scripts/job_build.sh am64xx-evm processor-sdk-08.02.00-nightly-config.txt nightly 08.02.00 false 
