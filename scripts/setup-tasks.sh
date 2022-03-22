@@ -49,18 +49,18 @@ install_host_packages() {
 		echo ">> ERROR: Do not have sudo permissions to install packages"
 		return
 	fi
-	sudo apt-get update
-	sudo apt-get -y dist-upgrade
+	sudo -E apt-get update
+	sudo -E apt-get -y dist-upgrade
 
 	# Install packages required for builds
-	sudo apt-get -f -y install \
+	sudo -E apt-get -f -y install \
 		git build-essential diffstat texinfo gawk chrpath socat doxygen \
 		dos2unix python python3 bison flex libssl-dev u-boot-tools mono-devel \
 		mono-complete curl python3-distutils repo pseudo python3-sphinx \
 		g++-multilib libc6-dev-i386 jq
 
 	# Install packages required for debugging
-	sudo apt-get -f -y install \
+	sudo -E apt-get -f -y install \
 		byobu tree sysstat
 }
 
