@@ -36,9 +36,9 @@ create_dir_with_sudo $TOOLS_PATH
 setup_proxy_settings
 setup_gitconfig
 
-install_installbuilder $TOOLS_PATH
-install_webgen $TOOLS_PATH
-install_swtools $TOOLS_PATH
+#install_installbuilder $TOOLS_PATH
+#install_webgen $TOOLS_PATH
+#install_swtools $TOOLS_PATH
 install_compiler $TOOLS_PATH
 install_secdev_tools $TOOLS_PATH
 
