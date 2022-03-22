@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-COPY -r config.ini oe-configs scripts ~/
+COPY config.ini oe-configs scripts ~/
 
 ENV CUSTOM_BUILD_PATH=~/build
 ENV CUSTOM_TOOLS_PATH=~/tools
